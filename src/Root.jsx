@@ -1,63 +1,81 @@
 import React from "react";
+import "./styles/Root.css";
 
-const cards = [
+const indicadores = [
   {
-    titulo: "Indicadores Econômicos",
-    descricao:
-      "Acompanhe PIB, geração de empregos, renda média, movimentação empresarial e outros indicadores-chave do município.",
-    link: "https://lookerstudio.google.com/reporting/indicadores-economicos"
+    icone: "🏢",
+    cor: "economia",
+    titulo: "EMPRESAS",
+    fonte: "PLANURB, 2025",
+    subtitulo: "Crescimento e número de estabelecimentos ativos",
+    posicao: "1º",
   },
   {
-    titulo: "Sustentabilidade Ambiental",
-    descricao:
-      "Dados de saneamento, qualidade hídrica, cobertura vegetal e iniciativas de preservação conduzidas pela SEMADES.",
-    link: "https://lookerstudio.google.com/reporting/sustentabilidade-ambiental"
+    icone: "💼",
+    cor: "economia",
+    titulo: "EMPREGOS",
+    fonte: "CAGED, 2025",
+    subtitulo: "Geração de empregos formais e informais",
+    posicao: "1º",
   },
   {
-    titulo: "Projetos Prioritários",
-    descricao:
-      "Mapeamento dos projetos estruturantes, status de execução, investimento e parceiros estratégicos.",
-    link: "https://lookerstudio.google.com/reporting/projetos-prioritarios"
+    icone: "🐄",
+    cor: "sustentabilidade",
+    titulo: "AGRONEGÓCIO: PECUÁRIA",
+    fonte: "IBGE, 2024",
+    subtitulo: "Produção e movimentação de rebanhos",
+    posicao: "1º",
   },
   {
-    titulo: "Inovação e Tecnologia",
-    descricao:
-      "Visão geral de startups, hubs de inovação e programas de transformação digital apoiados pela secretaria.",
-    link: "https://lookerstudio.google.com/reporting/inovacao-tecnologia"
-  }
+    icone: "🌾",
+    cor: "sustentabilidade",
+    titulo: "AGRONEGÓCIO: AGRICULTURA",
+    fonte: "IBGE, 2024",
+    subtitulo: "Produção e área plantada das principais culturas",
+    posicao: "1º",
+  },
+  {
+    icone: "🚢",
+    cor: "inovacao",
+    titulo: "Comércio Exterior Exportação",
+    fonte: "COMEXTAT, 2025",
+    subtitulo: "Principais produtos exportados pelo município",
+    posicao: "1º",
+  },
+  {
+    icone: "📦",
+    cor: "inovacao",
+    titulo: "Comércio Exterior Importação",
+    fonte: "COMEXTAT, 2025",
+    subtitulo: "Principais produtos importados pelo município",
+    posicao: "1º",
+  },
 ];
 
 export default function Root() {
   return (
-    <>
-      <header className="site-header single-page">
-        <div>
-          <p className="site-tagline">Observatório Econômico • SEMADES</p>
-          <h1 className="site-title">Portal de Dashboards</h1>
-          <p className="site-description">
-            Escolha um painel para abrir a visualização completa no Looker
-            Studio. Os cards abaixo reúnem os principais eixos de atuação da
-            secretaria.
-          </p>
+    <div className="dashboard-container">
+      <header className="dashboard-header">
+        <h1 className="titulo-degrade">Dashboard de Indicadores</h1>
+        <p>Desenvolvimento Urbano e Sustentabilidade • Janeiro - Setembro 2025</p>
+        <div className="legenda">
+          <span className="tag economia">Economia</span>
+          <span className="tag sustentabilidade">Sustentabilidade</span>
+          <span className="tag inovacao">Inovação</span>
         </div>
       </header>
-      <main className="cards-wrapper">
-        {cards.map((card) => (
-          <article className="dashboard-card" key={card.titulo}>
-            <h2>{card.titulo}</h2>
-            <p>{card.descricao}</p>
-            <a className="dashboard-link" href={card.link} target="_blank" rel="noopener noreferrer">
-              Abrir painel
-            </a>
-          </article>
+
+      <main className="card-grid">
+        {indicadores.map((item, index) => (
+          <div key={index} className={`card ${item.cor}`}>
+            <div className="icone">{item.icone}</div>
+            <div className="posicao">{item.posicao}</div>
+            <h2>{item.titulo}</h2>
+            <p className="fonte">{item.fonte}</p>
+            <p className="subtitulo">{item.subtitulo}</p>
+          </div>
         ))}
       </main>
-      <footer>
-        <small>
-          Secretaria Municipal de Desenvolvimento Econômico e Sustentável —
-          Acesso público aos indicadores oficiais.
-        </small>
-      </footer>
-    </>
+    </div>
   );
 }
