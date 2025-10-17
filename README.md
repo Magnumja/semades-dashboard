@@ -1,4 +1,4 @@
-# semades-dashboard
+# SEMADES Dashboard
 Portal de visualização de indicadores da SEMADES, integrando dashboards do Observatório Econômico em um site React responsivo com links diretos para os relatórios Looker Studio.
 
 
@@ -14,3 +14,9 @@ Próximas etapas:
 - Adicionar componentes e estilos (Bianca e Neto)
 - Inserir links Looker Studio (Pedrinho)
 - Deploy final (Magnum)
+
+## Autores
+- Bianca Sabka
+- Magnum Abreu
+- Roberto Neto
+- Pedro Antonio
