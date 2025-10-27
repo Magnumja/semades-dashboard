@@ -116,3 +116,57 @@
   text-decoration: none;
   font-weight: 600;
 }
+
+/* ==== GRID PRINCIPAL ==== */
+.economic-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+/* 📱 MOBILE */
+@media (max-width: 768px) {
+  .economic-grid {
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+  }
+
+  .economic-card {
+    min-height: auto;
+    padding: 1.2rem 1.4rem;
+  }
+
+  .chart-card {
+    order: 2; /* mantém o gráfico abaixo */
+    height: 260px; /* altura ajustada */
+  }
+
+  .chart-container {
+    min-height: 180px; /* impede o gráfico de “vazar” */
+  }
+
+  .economic-title {
+    font-size: 1rem;
+  }
+
+  .economic-item {
+    padding: 0.7rem 0.9rem;
+  }
+
+  .economic-value {
+    font-size: 0.95rem;
+  }
+}
+
+/* 💻 DESKTOP */
+@media (min-width: 1024px) {
+  .economic-grid {
+    grid-template-columns: 1fr 1.1fr; /* leve destaque ao gráfico */
+    align-items: stretch;
+    gap: 2rem;
+  }
+
+  .economic-card {
+    min-height: 360px;
+  }
+}
