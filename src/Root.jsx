@@ -76,6 +76,7 @@ export default function Root() {
         </div>
       </header>
 
+      {/* Cards principais */}
       <div className="dashboard-content">
         <main className="card-grid">
           {indicadores.map((item, index) => (
@@ -86,7 +87,7 @@ export default function Root() {
               rel="noopener noreferrer"
               style={{ textDecoration: "none" }}
             >
-              <div key={index} className={`card ${item.cor}`}>
+              <div className={`card ${item.cor}`}>
                 <div className="icone">{item.icone}</div>
                 <div className="posicao">{item.posicao}</div>
                 <h2>{item.titulo}</h2>
@@ -98,6 +99,7 @@ export default function Root() {
         </main>
       </div>
 
+      {/* Seções de economia e sustentabilidade */}
       <section className="economic-wrapper">
         <EconomicCards />
       </section>
@@ -105,6 +107,8 @@ export default function Root() {
       <aside className="environment-wrapper">
         <EnvironmentCards />
       </aside>
+
+      {/* Gráficos finais */}
       <GraphicsSection />
     </div>
   );
