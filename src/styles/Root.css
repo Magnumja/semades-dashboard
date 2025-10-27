@@ -47,6 +47,32 @@ body {
   margin-bottom: 1.5rem;
 }
 
+.dashboard-content {
+  display: grid;
+  grid-template-columns: 1fr minmax(0, 320px);
+  gap: 1.5rem;
+  align-items: start;
+  text-align: left;
+}
+
+.environment-wrapper {
+  min-width: 0;
+}
+
+.economic-wrapper {
+  margin-top: 1.5rem;
+}
+
+@media (max-width: 1024px) {
+  .dashboard-content {
+    grid-template-columns: 1fr;
+  }
+
+  .economic-wrapper {
+    margin-top: 1.5rem;
+  }
+}
+
 /* ====== TAGS ====== */
 
 .legenda {
