@@ -1,3 +1,4 @@
+/* ...existing code... */
 .env-container {
   background: #ffffff;
   border-radius: 12px;
@@ -8,28 +9,28 @@
   height: 100%;
 }
 
-.env-title {
-  color: #1d8f3f; /* verde SEMADES */
-  font-size: 1.1rem;
-  font-weight: 600;
-  display: flex;
-  align-items: center;
-  gap: 0.4rem;
-  margin: 0;
-}
-
-.env-header p {
-  color: #666;
-  font-size: 0.85rem;
-  margin-top: 0.3rem;
-  margin-bottom: 1.2rem;
-}
+/* ...existing code... */
 
 .env-card {
   display: flex;
+  gap: 1rem;
+  /* centraliza verticalmente todo o conteúdo (recomendado) */
+  align-items: center;
+  /* permite que o conteúdo expanda horizontalmente */
+}
+
+/* nova classe que agrupa a lista de cartões */
+.card-list {
+  display: flex;
   flex-direction: column;
   gap: 0.8rem;
+  flex: 1 1 auto;
+  align-self: center;
+  /* opcional: limita largura máxima para não "empurrar" o gráfico */
+  max-width: calc(100% - 260px);
 }
+
+
 
 .card-row {
   display: flex;
@@ -41,37 +42,35 @@
   transition: 0.2s ease;
 }
 
-.card-row:hover {
-  background: #d9f2e0;
-}
 
-.left {
+.chart-container {
+  width: 220px;
+  height: 220px;
+  background: transparent;
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  color: #2e7d32;
-  font-weight: 500;
-}
-
-.item-icon {
-  font-size: 1.2rem;
-}
-
-.value {
-  color: #0b6623;
-  font-weight: 700;
-  font-size: 1.1rem;
-}
-
-.card-footer {
-  background: #e8f7ed;
+  justify-content: center;
   border-radius: 8px;
-  padding: 0.8rem 1rem;
-  font-size: 0.9rem;
-  color: #1d8f3f;
-  font-weight: 500;
+  align-self: center;
+  margin-left: 8px;
 }
 
-.taxa-titulo {
-  font-weight: 700;
+
+
+@media (max-width: 720px) {
+  .env-card {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .card-list {
+    max-width: 100%;
+    align-self: stretch;
+  }
+
+  .chart-container {
+    width: 100%;
+    height: 220px;
+  }
 }
+
