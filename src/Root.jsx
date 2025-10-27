@@ -2,6 +2,7 @@ import React from "react";
 import "./styles/Root.css";
 import EnvironmentCards from "./components/EnvironmentCards";
 import EconomicCards from "./components/EconomicCards";
+import GraphicsSection from "./components/GraphicsSection";
 
 const indicadores = [
   {
@@ -95,8 +96,6 @@ export default function Root() {
             </a>
           ))}
         </main>
-
-        
       </div>
 
       <section className="economic-wrapper">
@@ -104,11 +103,9 @@ export default function Root() {
       </section>
 
       <aside className="environment-wrapper">
-          <EnvironmentCards />
-        </aside>
-      <footer>
-        coloca aq o footer
-      </footer>
+        <EnvironmentCards />
+      </aside>
+      <GraphicsSection />
     </div>
   );
 }
