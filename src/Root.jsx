@@ -1,8 +1,7 @@
 import React from "react";
 import "./styles/Root.css";
 import EnvironmentCards from "./components/EnvironmentCards";
-import EconomicCards from "./components/EconomicCards";
-import GraphicsSection from "./components/GraphicsSection";
+import EconomicSection from "./components/EconomicSection"; // ✅ Mantém só este import
 
 const indicadores = [
   {
@@ -76,7 +75,6 @@ export default function Root() {
         </div>
       </header>
 
-      {/* Cards principais */}
       <div className="dashboard-content">
         <main className="card-grid">
           {indicadores.map((item, index) => (
@@ -99,17 +97,13 @@ export default function Root() {
         </main>
       </div>
 
-      {/* Seções de economia e sustentabilidade */}
       <section className="economic-wrapper">
-        <EconomicCards />
+        <EconomicSection />
       </section>
 
       <aside className="environment-wrapper">
         <EnvironmentCards />
       </aside>
-
-      {/* Gráficos finais */}
-      <GraphicsSection />
     </div>
   );
 }
