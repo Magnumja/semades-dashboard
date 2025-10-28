@@ -100,11 +100,11 @@ export default function Root() {
 
       <section className="economic-wrapper">
         <EconomicSection />
-        <IndicatorEvolution />
+        <EnvironmentCards />
       </section>
 
       <aside className="environment-wrapper">
-        <EnvironmentCards />
+        <IndicatorEvolution />
       </aside>
     </div>
   );

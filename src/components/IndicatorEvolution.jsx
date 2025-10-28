@@ -11,15 +11,15 @@ import {
 import "../styles/IndicatorEvolution.css";
 
 const data = [
-  { month: 'Jan', empresas: 500, empregos: 700, mudas: 2700, sustentabilidade: 3000 },
-  { month: 'Fev', empresas: 520, empregos: 750, mudas: 2900, sustentabilidade: 3200 },
-  { month: 'Mar', empresas: 540, empregos: 780, mudas: 3100, sustentabilidade: 3400 },
-  { month: 'Abr', empresas: 530, empregos: 760, mudas: 2800, sustentabilidade: 3100 },
-  { month: 'Mai', empresas: 550, empregos: 800, mudas: 2900, sustentabilidade: 3300 },
-  { month: 'Jun', empresas: 580, empregos: 820, mudas: 3000, sustentabilidade: 3400 },
-  { month: 'Jul', empresas: 570, empregos: 810, mudas: 2800, sustentabilidade: 3200 },
-  { month: 'Ago', empresas: 560, empregos: 790, mudas: 2700, sustentabilidade: 3100 },
-  { month: 'Set', empresas: 540, empregos: 770, mudas: 2700, sustentabilidade: 3000 }
+  { month: 'Jan', Empresas: 500, Empregos: 700, Mudas: 2700 },
+  { month: 'Fev', Empresas: 520, Empregos: 750, Mudas: 2900 },
+  { month: 'Mar', Empresas: 540, Empregos: 780, Mudas: 3100 },
+  { month: 'Abr', Empresas: 530, Empregos: 760, Mudas: 2800 },
+  { month: 'Mai', Empresas: 550, Empregos: 800, Mudas: 2900 },
+  { month: 'Jun', Empresas: 580, Empregos: 820, Mudas: 3000 },
+  { month: 'Jul', Empresas: 570, Empregos: 810, Mudas: 2800 },
+  { month: 'Ago', Empresas: 560, Empregos: 790, Mudas: 2700 },
+  { month: 'Set', Empresas: 540, Empregos: 770, Mudas: 2700 }
 ];
 
 export default function IndicatorEvolution() {
@@ -33,37 +33,37 @@ export default function IndicatorEvolution() {
       <div className="chart-container">
         <ResponsiveContainer width="100%" height={400}>
           <LineChart data={data} margin={{ top: 20, right: 30, left: 20, bottom: 20 }}>
-            <CartesianGrid strokeDasharray="3 3" stroke="#f0f0f0" />
+            <CartesianGrid strokeDasharray="2 4" stroke="#e0e0e0" strokeWidth={1.2} />
             <XAxis dataKey="month" stroke="#666" />
             <YAxis stroke="#666" />
             <Tooltip />
             <Line 
               type="monotone" 
-              dataKey="empresas" 
+              dataKey="Empresas" 
               stroke="#1e88e5" 
-              dot={{ r: 4 }}
-              strokeWidth={2}
+              dot={{ r: 6, strokeWidth: 3 }}
+              strokeWidth={3}
             />
             <Line 
               type="monotone" 
-              dataKey="empregos" 
-              stroke="#42a5f5" 
-              dot={{ r: 4 }}
-              strokeWidth={2}
+              dataKey="Empregos" 
+              stroke="#64b5f6" 
+              dot={{ r: 6, strokeWidth: 3 }}
+              strokeWidth={3}
             />
             <Line 
               type="monotone" 
-              dataKey="mudas" 
+              dataKey="Mudas" 
               stroke="#43a047" 
-              dot={{ r: 4 }}
-              strokeWidth={2}
+              dot={{ r: 6, strokeWidth: 3 }}
+              strokeWidth={3}
             />
             <Line 
               type="monotone" 
               dataKey="sustentabilidade" 
               stroke="#66bb6a" 
-              dot={{ r: 4 }}
-              strokeWidth={2}
+              dot={{ r: 6, strokeWidth: 3 }}
+              strokeWidth={3}
             />
           </LineChart>
         </ResponsiveContainer>
