@@ -1,7 +1,8 @@
 import React from "react";
 import "./styles/Root.css";
 import EnvironmentCards from "./components/EnvironmentCards";
-import EconomicSection from "./components/EconomicSection"; // ✅ Mantém só este import
+import EconomicSection from "./components/EconomicSection";
+import IndicatorEvolution from "./components/IndicatorEvolution";
 
 const indicadores = [
   {
@@ -99,10 +100,11 @@ export default function Root() {
 
       <section className="economic-wrapper">
         <EconomicSection />
+        <EnvironmentCards />
       </section>
 
       <aside className="environment-wrapper">
-        <EnvironmentCards />
+        <IndicatorEvolution />
       </aside>
     </div>
   );
